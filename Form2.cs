@@ -25,7 +25,7 @@ namespace blog_feladat
         }
 
         private const string ConnectionSrting = "Server = localhost;Database=blog;Uid=root;password=;Sslmode=None";
-        private string Addnewblogger(string username, string email, string password)
+        private bool Addnewblogger(string username, string email, string password)
         {
             try
             {
@@ -51,15 +51,15 @@ namespace blog_feladat
 
                     connection.Close();
                     this.Close();
-                    return "sikeres regisztáció.";
+                    return true;
                 }
 
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return ex.Message;
+                return false;
             }
 
        
@@ -69,7 +69,24 @@ namespace blog_feladat
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Addnewblogger(textBox1.Text,textBox2.Text,textBox3.Text));
+            try
+            {
+                if ( Addnewblogger(textBox1.Text, textBox2.Text, textBox3.Text) == true)
+
+                {
+                    MessageBox.Show("sikeres registrálció");
+                }
+                else
+                {
+                    MessageBox.Show("sikertelen registrálció");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         }
     }
-}
+

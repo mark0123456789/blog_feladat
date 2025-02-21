@@ -46,3 +46,4 @@ C:\Users\piringerm\source\repos\blog_feladat\obj\Debug\blog_feladat.csproj.CoreC
 C:\Users\piringerm\source\repos\blog_feladat\obj\Debug\blog_fel.EFB7B4D9.Up2Date
 C:\Users\piringerm\source\repos\blog_feladat\obj\Debug\blog_feladat.exe
 C:\Users\piringerm\source\repos\blog_feladat\obj\Debug\blog_feladat.pdb
+C:\Users\piringerm\source\repos\blog_feladat\obj\Debug\blog_feladat.Form3.resources
