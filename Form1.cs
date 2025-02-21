@@ -34,11 +34,14 @@ namespace blog_feladat
 
                     bool van = dr.Read();
 
+                    if (van) {
+                        UserId.Id = dr.GetInt32(0);
+                    }
 
                     connection.Close();
 
 
-                    return van;
+                    return true;
                 }
             }
             catch (Exception ex)
@@ -51,10 +54,12 @@ namespace blog_feladat
         {
             try
             {
-                if (Beleptet(textBox1.Text, textBox2.Text))
+                if (Beleptet(textBox1.Text, textBox2.Text) == true)
 
                 {
                     MessageBox.Show("Regisztrált tag");
+                    Form3 form3 = new Form3();
+                    form3.ShowDialog();
                 }
                 else
                 {
@@ -69,6 +74,10 @@ namespace blog_feladat
             }
             }
         }
+    public static class UserId {
+
+        public static int Id  { get; set; }
+    }
     }
 
 
