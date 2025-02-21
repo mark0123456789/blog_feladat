@@ -49,16 +49,26 @@ namespace blog_feladat
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Beleptet(textBox1.Text, textBox2.Text))
-
+            try
             {
-                MessageBox.Show("Regisztrált tag");
+                if (Beleptet(textBox1.Text, textBox2.Text))
+
+                {
+                    MessageBox.Show("Regisztrált tag");
+                }
+                else
+                {
+                    Form2 form2 = new Form2();
+                    form2.ShowDialog();
+                }
             }
-            else
-            { 
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             }
         }
     }
-}
+
+
